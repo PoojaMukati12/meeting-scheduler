@@ -4,14 +4,14 @@ import MeetingTimeDate from "../_components/MeetingTimeDate";
 import { doc, getDoc, getFirestore } from "firebase/firestore";
 import { app } from "@/config/FirebaseConfig";
 
-interface SharedMeetingEventProps {
+type MeetingPageProps = {
   params: {
-    business: string;       // email in URL
-    meetingeventId: string; // event ID
-  };
+    business: string
+    meetingeventId: string
+  }
 }
 
-export default function SharedMeetingEvent({ params }: SharedMeetingEventProps) {
+export default function SharedMeetingEvent({ params }: MeetingPageProps) {
   const db = getFirestore(app);
 
   const [businessInfo, setBusinessInfo] = useState<any>(null);
